@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+import { Suspense } from 'react'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+
+import Navbar from './shared/theme/NavBar/NavBar'
+import Footer from './shared/theme/Footer/Footer'
+
+import { routes } from './shared/routes/routes'
 import './shared/styles/tailwind.css'
 
 function App() {
   return (
-    <div className="App flex">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Suspense fallback={<div>Loading....</div>}>
+        <Navbar />
+        <Switch>
+          {routes.map((route, i) => (
+            <Route exact key={route.path} {...route} />
+          ))}
+        </Switch>
+      </Suspense>
+      <Footer>Copyright © 2021 ChomCHOB. All Rights Reserved.</Footer>
+    </Router>
   );
 }
 

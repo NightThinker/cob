@@ -1,5 +1,7 @@
+import Layout from '../../shared/theme/Layout/Layout'
+
 const Product = () => {
-  return <div>Product</div>
+  return <Layout>Product</Layout>
 }
 
 export default Product

@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
+
+@font-face {
+  font-family: 'Boon';
+  src: local('Boon'), url(../asset/font/Boon-Regular.ttf) format('ttf');
+}
+
 @tailwind utilities;
