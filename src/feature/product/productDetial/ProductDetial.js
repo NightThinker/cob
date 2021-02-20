@@ -26,7 +26,6 @@ const ProductDetail = () => {
   useEffect(() => {
     (async () => {
       const { data } = await onGetProductById(id);
-      console.log('data', data)
       setProduct(data)
     })()
   }, [])
