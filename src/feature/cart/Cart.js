@@ -1,11 +1,18 @@
+import { useSelector } from 'react-redux';
+
 import Layout from '../../shared/theme/Layout/Layout'
 import Text from '../../shared/components/Text/Text'
 import Img from '../../shared/components/Img/Img'
 
-import logo from '../../logo.svg'
 import Button from '../../shared/components/Button/Button'
 
 const Cart = () => {
+  const { carts } = useSelector((state) => state.cart);
+
+  const total = carts.reduce((sum, number) => {
+    return sum + parseFloat(number.total)
+  }, 0)
+
   return (
     <Layout>
       <ul className='flex flex-col bg-white-light rounded-10 p-20 '>
@@ -17,28 +24,21 @@ const Cart = () => {
             <Text size='text-lg' color='text-black'>QUANTITY</Text>
             <Text size='text-lg' color='text-black'>TOTAL</Text>
           </div>
-          <div className='grid grid-cols-cart py-20 items-center border-b border-grey-border'>
-            <div className='flex gap-10 items-center'>
-              <Img src={logo} className='img-sm' />
-              <Text color='text-black-light'>x NAME</Text>
+          {carts.map(({ id, img, name, price, qty, total }) => (
+            <div key={id} className='grid grid-cols-cart py-20 items-center border-b border-grey-border'>
+              <div className='flex gap-10 items-center'>
+                <Img src={img} className='img-sm' />
+                <Text color='text-black-light'>{name}</Text>
+              </div>
+              <Text isNumber color='text-grey-light'>{price}</Text>
+              <Text color='text-black-light'>{qty}</Text>
+              <Text isNumber color='text-grey-light'>{total}</Text>
             </div>
-            <Text color='text-grey-light'>PRxICE</Text>
-            <Text color='text-black-light'>PRxICE</Text>
-            <Text color='text-grey-light'>PRxICE</Text>
-          </div>
-          <div className='grid grid-cols-cart py-20 items-center border-b border-grey-border'>
-            <div className='flex gap-10 items-center'>
-              <Img src={logo} className='img-sm' />
-              <Text color='text-black-light'>x NAME</Text>
-            </div>
-            <Text color='text-grey-light'>PRxICE</Text>
-            <Text color='text-black-light'>PRxICE</Text>
-            <Text color='text-grey-light'>PRxICE</Text>
-          </div>
+          ))}
         </li>
         <li className='flex justify-end gap-10 items-center'>
-          <Text size='text-xl' weight='font-medium' color='text-black-light'>{`Subtotal (2 Product):`}</Text>
-          <Text size='text-2xl' weight='font-medium' color='text-orange'  >100</Text>
+          <Text size='text-xl' weight='font-medium' color='text-black-light'>{`Subtotal (${carts.length} Product):`}</Text>
+          <Text isNumber size='text-2xl' weight='font-medium' color='text-orange'>{total.toFixed(2)}</Text>
         </li>
         <li className='flex justify-end mt-15 '>
           <Button width='btn-md'>Proceed to check out</Button>
