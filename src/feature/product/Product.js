@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import NumberFormat from 'react-number-format'
 
 import Layout from '../../shared/theme/Layout/Layout'
 import ProductItems from './container/ProductItems/ProductItems'
+import CardLoading from '../../shared/components/Loading/CardLoading'
 
 import { onGetProduct } from '../../shared/api/product.api'
 
@@ -22,7 +22,20 @@ const Product = () => {
   return (
     <Layout>
       <div className='grid grid-cols-4 gap-x-22 gap-y-25'>
-        {products.map(i => (
+        {products.length ? (
+          products.map(i => (
+            <ProductItems
+              key={i._id}
+              name={i.name}
+              img={i.image_url}
+              price={i.price}
+              review={i.review}
+              brand={i.brand_info}
+              onClick={() => history.push(`/product/${i._id}`)}
+            />
+          ))
+        ) : <CardLoading />}
+        {/* {products.map(i => (
           <ProductItems
             key={i._id}
             name={i.name}
@@ -32,7 +45,7 @@ const Product = () => {
             brand={i.brand_info}
             onClick={() => history.push(`/product/${i._id}`)}
           />
-        ))}
+        ))} */}
       </div>
     </Layout>
   )

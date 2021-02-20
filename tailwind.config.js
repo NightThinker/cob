@@ -41,6 +41,7 @@ module.exports = {
       '2xl': ['28px', '36px'],
     },
     spacing: {
+      '0': '0px',
       '4': '0.25rem',
       '6': '0.375rem',
       '10': '0.625rem',

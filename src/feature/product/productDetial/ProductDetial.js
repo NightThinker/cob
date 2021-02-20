@@ -8,11 +8,10 @@ import Text from '../../../shared/components/Text/Text'
 import Star from '../../../shared/components/Star/Star'
 import Button from '../../../shared/components/Button/Button'
 import ButtonGroup from '../../../shared/container/ButtonGroup/ButtonGroup'
+import Loading from '../../../shared/components/Loading/Loading'
 
 import { onGetProductById } from '../../../shared/api/product.api'
 import { addToCart } from '../../../store/actions/actionCart';
-import { data } from 'autoprefixer';
-
 
 const ProductDetail = () => {
   const [product, setProduct] = useState()
@@ -56,7 +55,7 @@ const ProductDetail = () => {
   return (
     <Layout>
       <div className='flex bg-white-light rounded-10 pt-30 pl-20 pr-30 pb-28 gap-25'>
-        {product && (
+        {product ? (
           <div className='flex'>
             <div className='w-2/5'>
               <Img className='img-lg' src={product?.image_url} />
@@ -84,7 +83,7 @@ const ProductDetail = () => {
               </Button>
             </div>
           </div>
-        )}
+        ) : <Loading />}
 
       </div>
     </Layout>

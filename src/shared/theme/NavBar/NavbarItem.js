@@ -8,7 +8,7 @@ const NavBarItem = ({ to, name }) => {
       to={to}
     // activeClassName='border-b-4 border-blue-500 font-medium text-blue-500'
     >
-      <span className='text-white font-medium'>{name}</span>
+      <span className='text-white font-medium text-base'>{name}</span>
     </NavLink>
   </li>)
 }
