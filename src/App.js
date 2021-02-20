@@ -11,6 +11,7 @@ import Footer from './shared/theme/Footer/Footer'
 
 import { routes } from './shared/routes/routes'
 import './shared/styles/tailwind.css'
+import './App.css'
 
 function App() {
   return (
