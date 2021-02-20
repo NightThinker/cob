@@ -3,7 +3,7 @@
 }
 
 .card {
-  width: 275px;
+  max-width: 275px;
 }
 
 .img-sm {
