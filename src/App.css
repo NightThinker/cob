@@ -5,6 +5,9 @@
 .card {
   max-width: 275px;
 }
+.img-md {
+  height: 196px;
+}
 
 .img-sm {
   width: 40px;
@@ -20,4 +23,10 @@
   width: 460px;
   height: 400px;
   border-radius: 15px;
+}
+
+.text {
+   white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

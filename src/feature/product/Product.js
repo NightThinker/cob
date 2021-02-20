@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import NumberFormat from 'react-number-format'
 
 import Layout from '../../shared/theme/Layout/Layout'
 import ProductItems from './container/ProductItems/ProductItems'
@@ -12,6 +13,8 @@ const Product = () => {
     (async () => {
       const { data } = await onGetProduct();
       console.log('data', data)
+      // const tt = data.map(o => ({ ...o, price: <NumberFormat value={o.price} displayType={'text'} thousandSeparator={true} prefix={'$'} /> }))
+      // console.log('tt', tt)
       setPrpducts(data)
     })()
   }, [])
