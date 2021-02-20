@@ -55,11 +55,12 @@ const ProductDetail = () => {
     <Layout>
       <div className='flex bg-white-light rounded-10 pt-30 pl-20 pr-30 pb-28 gap-25'>
         {product ? (
-          <div className='flex'>
-            <div className='w-2/5'>
+          <ul className='flex flex-col md:flex-row'>
+            <il className='md:w-2/5 w-full'>
               <Img className='img-lg' src={product?.image_url} />
-            </div>
-            <div className='flex flex-col w-4/5'>
+            </il>
+
+            <li className='flex flex-col md:w-4/5 w-full '>
               <Text size='text-2xl' color='text-gray-dark'>{product?.name}</Text>
               <div className='flex gap-10 mt-10'>
                 <Star rate={product?.review?.rating} />
@@ -80,8 +81,8 @@ const ProductDetail = () => {
                 </svg>
                 <Text color='text-white' weight='font-semibold' >ADD TO CART</Text>
               </Button>
-            </div>
-          </div>
+            </li>
+          </ul>
         ) : <Loading />}
 
       </div>
