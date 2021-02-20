@@ -22,19 +22,23 @@ module.exports = {
         DEFAULT: '#939393',
         dark: '#707070',
       },
+      grey: {
+        border: '#DEDEDE',
+        light: '#A0A0A0',
+      },
       green: '#1A586A'
     },
-    // height: {
-    //   '76': '4.75rem',
-    //   extend: {},
-    // },
+    gridTemplateColumns: {
+      '4': 'repeat(4, minmax(0, 1fr))',
+      'cart': '3fr repeat(3, 1fr)',
+    },
     fontSize: {
       'xs': ['12px', '14px'],
       'sm': ['14px', '18px'],
       'base': ['16px', '14px'],
       'lg': ['18px', '22px'],
+      'xl': ['20px', '26px'],
       '2xl': ['28px', '36px'],
-
     },
     spacing: {
       '4': '0.25rem',
