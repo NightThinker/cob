@@ -15,7 +15,7 @@ const Cart = () => {
 
   return (
     <Layout>
-      <ul className='flex flex-col bg-white-light rounded-10 p-20 '>
+      <ul className='flex flex-col bg-white-light rounded p-20 '>
         <Text size='text-2xl' color='text-black-light' weight='font-medium'>Cart</Text>
         <li className='flex flex-col mt-25 mb-30'>
           <div className='grid grid-cols-cart border-b pb-6 border-grey-border'>

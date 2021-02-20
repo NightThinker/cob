@@ -5,7 +5,7 @@ const CardLoading = () => {
   return (
     <>
       {arr.map(() => (
-        <div className='flex bg-white-light rounded-10 pt-30 pl-20 pr-30 pb-28 gap-25'>
+        <div className='flex bg-white-light rounded pt-30 pl-20 pr-30 pb-28 gap-25'>
           <ContentLoader>
             <rect x="0" y="0" rx="5" ry="5" width="160" height="80" />
             {/* <rect x="80" y="17" rx="4" ry="4" width="300" height="13" />

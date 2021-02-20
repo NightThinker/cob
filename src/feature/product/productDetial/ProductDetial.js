@@ -53,7 +53,7 @@ const ProductDetail = () => {
 
   return (
     <Layout>
-      <div className='flex bg-white-light rounded-10 pt-30 pl-20 pr-30 pb-28 gap-25'>
+      <div className='flex bg-white-light rounded pt-30 pl-20 pr-30 pb-28 gap-25'>
         {product ? (
           <ul className='flex flex-col md:flex-row'>
             <il className='md:w-2/5 w-full'>

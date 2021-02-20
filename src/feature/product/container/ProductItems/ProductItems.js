@@ -4,8 +4,8 @@ import Star from '../../../../shared/components/Star/Star'
 
 const ProductItems = ({ img, name, price, review, brand, onClick, ...other }) => {
   return (
-    <div className='flex flex-col card bg-white-light rounded-15' onClick={onClick}>
-      <Img src={img} className='rounded-15 img-md' />
+    <div className='flex flex-col card bg-white-light rounded-md' onClick={onClick}>
+      <Img src={img} className='rounded-md img-md' />
       <div className='flex gap-10 px-15 pt-10 pb-15'>
         <Img className='img-sm' src={brand.url} />
         <div className='flex flex-col gap-10'>

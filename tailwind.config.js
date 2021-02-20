@@ -64,6 +64,13 @@ module.exports = {
       '76': '4.75rem',
       '100': '6.25rem',
     },
+    borderRadius: {
+      'none': '0',
+      sm: '0.125rem',
+      DEFAULT: '10px',
+      'md': '15px',
+      full: '9999px',
+    },
     extend: {
       fontFamily: {
         'boon': ['Boon']
